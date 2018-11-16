@@ -1,0 +1,102 @@
+/*
+*L12: THE padding-top TO THE body
+*/
+
+#paddingTopXL {
+  /*padding-top: 70px;*/
+}
+
+
+h1 {
+  
+  font-family: 'Reem Kufi', sans-serif;
+}
+.floatRight{
+  float: right;
+}
+.marginLeftXL{
+  margin-left : 15px;
+}
+.marginRightXL{
+  margin-right : 15px;
+}
+.relativeHolder{
+  display: inline-block;
+  position: relative;
+}
+
+.absouteAppearTop{
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  top : 0px;
+  right : 0px;
+  left : 0px;
+  opacity : 10%;
+}
+
+.absoluteAppearBottom{
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  bottom : 0px;
+  right : 0px;
+  left : 0px;
+  opacity : 10%;
+}
+
+.inline{
+  display: inline;
+}
+
+.btn-fav .not-fav{
+  background: red;
+}
+
+
+.dark-primary-color    { background: #1976D2; }
+.default-primary-color { background: #2196F3; }
+.light-primary-color   { background: #BBDEFB; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #9E9E9E; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #757575; }
+.divider-color         { border-color: #BDBDBD; }
+
+
+.default-primary-color-gradient{
+  background: #2196F3;
+  background-image: -webkit-linear-gradient(top, #2196F3, #1976D2);
+  background-image: -moz-linear-gradient(top, #2196F3, #1976D2);
+  background-image: -ms-linear-gradient(top, #2196F3, #1976D2);
+  background-image: -o-linear-gradient(top, #2196F3, #1976D2);
+  background-image: linear-gradient(to bottom, #2196F3, #1976D2);
+}
+.default-primary-color-gradient:hover{
+  background: #757575;
+  background-image: -webkit-linear-gradient(top, #757575, #212121);
+  background-image: -moz-linear-gradient(top, #757575, #212121);
+  background-image: -ms-linear-gradient(top, #757575, #212121);
+  background-image: -o-linear-gradient(top, #757575, #212121);
+  background-image: linear-gradient(to bottom, #757575, #212121);
+}
+.buttonLink {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  -webkit-box-shadow: 0px 0px 10px #666666;
+  -moz-box-shadow: 0px 0px 10px #666666;
+  box-shadow: 0px 0px 10px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 5px 20px 5px 20px;
+  text-decoration: none;
+}
+
+.buttonLink:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.fullWidth{
+  width: 100%;
+}

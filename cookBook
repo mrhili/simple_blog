@@ -1,0 +1,2913 @@
+            ▒█▀▀█ ▒█▀▀▀█ ▒█▀▀▀█ ▒█░▄▀           　 
+            ▒█░░░ ▒█░░▒█ ▒█░░▒█ ▒█▀▄░           　  
+            ▒█▄▄█ ▒█▄▄▄█ ▒█▄▄▄█ ▒█░▒█ 　 
+                    
+                                    ▒█▀▀█ ▒█▀▀▀█ ▒█▀▀▀█ ▒█░▄▀ 
+                                    ▒█▀▀▄ ▒█░░▒█ ▒█░░▒█ ▒█▀▄░
+                                    ▒█▄▄█ ▒█▄▄▄█ ▒█▄▄▄█ ▒█░▒█ 
+
+
+
+
+                    ╭━━╮╱╱╱╱╭━━┳╮╱╱╱╱╱╭╮╱╱╱╭━━┳╮
+                    ╰╮╮┣━┳━╮┃━━┫╰┳━┳━╮┃╰┳┳╮┃━━┫╰┳━┳━╮
+                    ╭┻╯┃╋┃━┫┣━━┃╭┫┻┫╋┃┃╋┃┃┃┣━━┃╭┫┻┫╋┃
+                    ╰━━┻━┻━╯╰━━┻━┻━┫╭╯╰━╋╮┃╰━━┻━┻━┫╭╯
+                    ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰╯╱╱╱╰━╯╱╱╱╱╱╱╱╰╯
+ℙ𝕒𝕥𝕙 :
+Path of the file
+    open new terminale
+        
+Sᴛᴇᴘ 0
+--------------------ℂ𝕠𝕕𝕖 -----------------
+        vagrant init
+        
+        vagrant up --provision
+
+        git Commande line
+
+        php artisan make:auth
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖  
+
+ℙ𝕒𝕥𝕙 :
+mysql
+        
+Sᴛᴇᴘ 1
+--------------------ℂ𝕠𝕕𝕖 -----------------
+        L2: CREATE DATABASE socialNet2;
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 
+
+
+ℙ𝕒𝕥𝕙 :
+.env
+        
+Sᴛᴇᴘ 2
+--------------------ℂ𝕠𝕕𝕖 -----------------
+        L2: CHANGE DB_DATABASE=blog
+        TO DB_DATABASE=blog
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖  
+
+ℙ𝕒𝕥𝕙 :
+config/database
+
+Sᴛᴇᴘ 3
+--------------------ℂ𝕠𝕕𝕖 -----------------
+/*L3: CHANGE TO WATH WE CREATE AS DATABASE IN MYSQL*/
+
+            'database' => env('DB_DATABASE', 'blog'),
+            'username' => env('DB_USERNAME', 'homestead'),
+            'password' => env('DB_PASSWORD', 'secret'),
+            'collation' => 'utf8_general_ci',
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖  
+
+ℙ𝕒𝕥𝕙 :
+file path
+    open new terminale
+        
+Sᴛᴇᴘ 4
+--------------------ℂ𝕠𝕕𝕖 -----------------
+    L4: php artisan migrate
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖  
+        
+        
+ℙ𝕒𝕥𝕙 :
+Path of the file
+    open new terminale
+        
+Sᴛᴇᴘ 5
+--------------------ℂ𝕠𝕕𝕖 -----------------
+L5: MAKE A MODEL AND MIGRATET WITH A TABLE POSTS AND A CONTROLLER
+ php artisan make:model Post -m -c -r
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖  
+
+ℙ𝕒𝕥𝕙 :
+Path of the file
+    open new terminale
+        
+Sᴛᴇᴘ 6
+--------------------ℂ𝕠𝕕𝕖 -----------------
+L6: DELETING HomeController
+cd Http/Controllers
+rm HomeController.php
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 
+
+ℙ𝕒𝕥𝕙 :
+Path of the file
+    open new terminale
+    
+Sᴛᴇᴘ 7
+--------------------ℂ𝕠𝕕𝕖 -----------------
+/*
+L7: CHANGING THE INDEX(/) ROOT FROM HomeController TO PostController
+AND CHANGE THE /home TO /
+*/
+Route::get('/home', 'PostController@index');
+
+/*
+L8: COMMENT THE INDEX welcom VIEW
+Route::get('/', function () {
+    return view('welcome');
+});
+*/
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+ℙ𝕒𝕥𝕙 :
+Path of the file
+    app/Controllers/PostController.php
+      class PostController
+        public function index
+    
+Sᴛᴇᴘ 8
+--------------------ℂ𝕠𝕕𝕖 -----------------
+/*
+L9: RETURNING THE home.blade.php VIEW
+*/
+      return view('home');
+      
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+
+ℙ𝕒𝕥𝕙 :
+resource/view/layouts/app.php
+  html
+    
+Sᴛᴇᴘ 9
+--------------------ℂ𝕠𝕕𝕖 -----------------
+{{-- L10:REMOVING THE div class=app FROM THE BODY * AND ADD AN id TO THE BODY WE CALL IT paddingTopXL * AND CUTTING THE HALL navbar * AND PASTIT INTO resource/view/partials/navbar.blade.php * AND INCLUDE THE NAVBAR--}}
+
+<body id="paddingTopXL">
+  @include('partials/navbar') 
+  @yield('content')
+  
+  
+  
+  {{--L11: ADDING A CUSTOM CSS AND CREATING HIS PATH public/css/cust.css--}}
+  <link href="/css/cust.css" rel="stylesheet">
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+
+
+
+ℙ𝕒𝕥𝕙 :
+Path of the file
+    open new terminale
+        
+Sᴛᴇᴘ 10
+--------------------ℂ𝕠𝕕𝕖 -----------------
+L12: CREATING THE CSS PATH
+cd public/css 
+touch cust.css
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖  
+
+ℙ𝕒𝕥𝕙 :
+public/css/cust.css
+  html
+    
+Sᴛᴇᴘ 11
+--------------------ℂ𝕠𝕕𝕖 -----------------
+/*
+*L12: THE padding-top TO THE body
+*/
+
+#paddingTopXL {
+  padding-top: 70px;
+}
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+ℙ𝕒𝕥𝕙 :
+Path of the file
+    open new terminale
+        
+Sᴛᴇᴘ 12
+--------------------ℂ𝕠𝕕𝕖 -----------------
+L13: CREATING THE NAVBAR PATH
+cd resource/view
+mkdir particles
+touch navbar.blade.php
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖  
+
+ℙ𝕒𝕥𝕙 :
+resource/view/navbar.blade.php
+        
+Sᴛᴇᴘ 13
+--------------------ℂ𝕠𝕕𝕖 -----------------
+L14: PASTING THE NAVBAR
+ctrl+v
+{{--L15:CHANGING THE id FROM navbar-static-top TO navbar-fixed-top --}}
+<nav class="navbar navbar-default navbar-fixed-top">
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖  
+
+
+ℙ𝕒𝕥𝕙 :
+Path of the file
+    open new terminale
+        
+Sᴛᴇᴘ 14
+--------------------ℂ𝕠𝕕𝕖 -----------------
+L16: CREATING THE head PATH
+cd resources/view/partials 
+touch head.blade.php
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 
+
+ℙ𝕒𝕥𝕙 :
+resources/view/layouts/app.blade.php
+        
+Sᴛᴇᴘ 15
+--------------------ℂ𝕠𝕕𝕖 -----------------
+{{--
+L17: CUTTING THE HEAD SECTION AND INCLUDIT FROM resources/view/partials/head.blade.php
+--}}
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 
+
+ℙ𝕒𝕥𝕙 :
+resources/view/partials/head.blade.php
+        
+Sᴛᴇᴘ 15
+--------------------ℂ𝕠𝕕𝕖 -----------------
+{{--
+L18: PASTING THE HEAD
+--}}
+ctrl+v
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+ℙ𝕒𝕥𝕙 :
+database/migrations/2017..posts_table.php
+        
+Sᴛᴇᴘ 16
+--------------------ℂ𝕠𝕕𝕖 -----------------
+/*
+L19: ADDING A NEW FIELS IN THE posts TABLE
+*/
+
+            $table->string('title');
+            $table->text('body');
+            $table->string('slug');
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 
+
+ℙ𝕒𝕥𝕙 :
+file path
+    open new terminale
+        
+Sᴛᴇᴘ 17
+--------------------ℂ𝕠𝕕𝕖 -----------------
+    L20: php artisan migrate
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+ℙ𝕒𝕥𝕙 :
+resources/views/partials/post.blade.php
+        
+Sᴛᴇᴘ 18
+--------------------ℂ𝕠𝕕𝕖 -----------------
+{{--L21: GET POST FROM DATABASE AS LIKE THAT VIEW --}}
+<div class="well">
+  <h3>{{$post->title}}</h3>
+  <h4>{{$post->created_at}}</h4>
+  <p>
+    {{substr($post->body,0,150)}} {{strlen($post->body > 150 ? " ..." : "" )}}
+    <span>
+  <a href="{{route('posts.show', $post->id)}}" class="btn btn-default pull-right lg">Viewing the complete post</a>
+  </span>
+  </p>
+</div>
+<hr />
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+ℙ𝕒𝕥𝕙 :
+resources/views/home.blade.php
+  .container>.row
+        
+Sᴛᴇᴘ 19
+--------------------ℂ𝕠𝕕𝕖 -----------------
+{{--L22: DELETE WATH INSIDE AND MAKE A NEW GENERATED POST CODE --}}
+    <div class="col-md-8 col-md-offset-2">
+
+
+      @if($posts->count()) @foreach($posts as $post) @include('partials/post') @endforeach @else
+      <div class="jumbotron">
+        <p>No post right know try to add one</p>
+      </div>
+      @endif
+
+    </div>
+    <hr />
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-6">
+        {!!$posts->links()!!}
+      </div>
+    </div>
+
+  </div>
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+
+ℙ𝕒𝕥𝕙 :
+file path
+    open new terminale
+        
+Sᴛᴇᴘ 20
+--------------------ℂ𝕠𝕕𝕖 -----------------
+    L23: CREATING NECESSARY FILES TO CRUD POSTS
+    cd resources/views
+    mkdir posts
+    touch show.blade.php
+    touch create.blade.php
+    touch edit.blade.php
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+
+ℙ𝕒𝕥𝕙 :
+app/Http/PostController.php
+        
+Sᴛᴇᴘ 21
+--------------------ℂ𝕠𝕕𝕖 -----------------
+/*
+L24: USING POST NAME SPACE FOR ORKING IN CRUD OPERATION
+*/
+use App\Post;
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+ℙ𝕒𝕥𝕙 :
+app/Http/PostController.php
+  PostController
+    public function index
+        
+Sᴛᴇᴘ 22
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+      /*
+        L25: LIMITING POSTS AND RETERNIT TO THE home.blade.php
+        */
+      $posts = Post::orderBy('id', 'desc')->paginate(5);
+      return view('home', compact('posts'));
+      
+      
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+ℙ𝕒𝕥𝕙 :
+app/Http/PostController.php
+  PostController
+    public function create
+        
+Sᴛᴇᴘ 22
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+      /*
+        L26: RETURNING THE VIEW FROM resources/views/posts/create.blade.php
+        */
+      return view('posts.create');
+      
+      
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+
+ℙ𝕒𝕥𝕙 :
+resources/views/posts/create.blade.php
+        
+Sᴛᴇᴘ 23
+--------------------ℂ𝕠𝕕𝕖 -----------------
+{{--L27: CREATING THE FORM TO CREATE A NEW POST--}}
+@extends('layouts.app') 
+@section('content')
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">Add a great post</h1>
+  </div>
+  <div class="panel-body">
+    <form method="post" role="form" class="form-horizontal" action="{{route('posts.store')}}">
+      {{csrf_field()}}
+
+
+      <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+        <label for="title" class="col-md-4 control-label">Title</label>
+
+        <div class="col-md-6">
+          <input id="title" type="text" class="form-control" name="title" placeholder="Shourt and mean something" required autofocus /> @if ($errors->has('title'))
+          <span class="help-block">
+              <strong>{{ $errors->first('title') }}</strong>
+          </span> @endif
+        </div>
+      </div>
+
+      <div class="form-group{{ $errors->has('slug') ? ' has-error' : '' }}">
+        <label for="slug" class="col-md-4 control-label">Slug</label>
+
+        <div class="col-md-6">
+          <input id="slug" type="text" class="form-control" name="slug" placeholder="" required /> @if ($errors->has('slug'))
+          <span class="help-block">
+              <strong>{{ $errors->first('slug') }}</strong>
+          </span> @endif
+        </div>
+      </div>
+
+      <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
+        <label for="body" class="col-md-4 control-label">Text</label>
+
+        <div class="col-md-6">
+          <textarea name="body" id="body" class="form-control" placeholder="Make it Great" cols="30" rows="10"></textarea> @if ($errors->has('body'))
+          <span class="help-block">
+              <strong>{{ $errors->first('body') }}</strong>
+          </span> @endif
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">
+          <button type="submit" class="btn btn-primary">
+            Share it with the worldwide !
+          </button>
+        </div>
+      </div>
+
+
+
+    </form>
+  </div>
+</div>
+@stop
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+ℙ𝕒𝕥𝕙 :
+app/Http/PostController.php
+  PostController
+    public function store
+        
+Sᴛᴇᴘ 24
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+      /*
+        L26: MAKE A VALIDATION AN STORE ALL AND REDIRECTE TO 
+        URL: posts/show
+        */
+      $this->validate($request, array(
+        'title' => 'required|max:255',
+        'slug' => 'required|min:3|max:255|unique:posts',
+        'body' => 'required',
+      ));
+      
+      $post=new Post;
+      $post->title=$request->title;
+      $post->slug=$request->slug;
+      $post->body=$request->body;
+      $post->save();
+      return redirect()->route('posts.show', $post->id);
+      
+      
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+ℙ𝕒𝕥𝕙 :
+app/Http/PostController.php
+  PostController
+    public function show
+        
+Sᴛᴇᴘ 24.1
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+       /*
+        *L26.1: GET THE ID AND SEND IT TO 
+        resources/views/post/show.blade.php
+        */
+        $post = Post::find($id);
+        return view('posts.show', compact('post'));
+      
+      
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+ℙ𝕒𝕥𝕙 :
+resources/views/post/show.blade.php
+        
+Sᴛᴇᴘ 25
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+{{--L27: CREATING THE VIEW FOR FETCHING A FORM --}} 
+@extends('layouts.app') 
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="text-center">{{$post->title}}</h2>
+            <div class="col-md-12">
+                <p class="lead">{!!$post->body!!}</p>
+            </div>
+            
+        </div>
+        <div class="col-md-4">
+            <div class="well">
+                <dl class="dl-horizontal">
+                    <dt>Added On:</dt>
+                    <dd>{{$post->created_at}}</dd>
+                </dl>
+            </div>
+            
+            <div class="well">
+                <dl class="dl-horizontal">
+                    <dt>Updated At:</dt>
+                    <dd>{{$post->updated_at}}</dd>
+                </dl>
+            </div>
+            
+            <div class="well">
+                <dl class="dl-horizontal">
+                    <dt>Slug:</dt>
+                    <dd><a href="{{ url('b', $post->slug) }}">{{$post->slug}}</a></dd>
+                </dl>
+                
+                <div class="col-sm-6">
+                    <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary btn-block">Edit</a>
+                </div>
+                
+                <div class="col-sm-6">
+                    <form action="{{ route('posts.destroy', $post->id) }}" method="post">
+                        {{method_field('DELETE')}}
+                        {{csrf_field()}}
+                        <input type="submit" value="Delete" class="btn btn-primary btn-block">
+                    </form>
+                </div>
+                
+                
+            </div>
+            
+            <hr />
+            
+            <div class="col-sm-12">
+                <a href="" class="btn btn-primary btn-block">All posts</a>
+            </div>
+        </div>
+    </div>
+</div>
+@stop
+
+@stop
+      
+      
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+ℙ𝕒𝕥𝕙 :
+app/Http/PostController.php
+  PostController
+    public function destroy
+        
+Sᴛᴇᴘ 26
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+      /*
+        L28: DESTROY THE GIVEN id AND REDIRECT TO
+        HOME PAGE
+        */
+      $post = Post::find($id);
+        
+        Post::destroy($id);
+        return redirect('/');
+      
+      
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+ℙ𝕒𝕥𝕙 :
+app/Http/PostController.php
+  PostController
+    public function destroy
+        
+Sᴛᴇᴘ 27
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+      /*
+        L29: SEND THE POST TO THE EDITING
+        */
+        $post = Post::find($id);
+        return view('posts.edit', compact('post'));
+      
+      
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+
+ℙ𝕒𝕥𝕙 :
+resources/views/post/edit.blade.php
+        
+Sᴛᴇᴘ 25
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+
+{{--L27: CREATING THE FORM TO CREATE A NEW POST--}} 
+@extends('layouts.app') 
+@section('content')
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">Edit it to be awsome</h1>
+  </div>
+  <div class="panel-body">
+    <form method="post" role="form" class="form-horizontal" action="{{route('posts.update', $post->id)}}">
+      {{method_field('PUT')}}
+      {{csrf_field()}}
+      
+      <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+        <label for="title" class="col-md-4 control-label">Title</label>
+
+        <div class="col-md-6">
+          <input id="title" type="text" class="form-control" name="title" value="{{ $post->title }}" placeholder="Shourt and mean something" required autofocus /> @if ($errors->has('title'))
+          <span class="help-block">
+              <strong>{{ $errors->first('title') }}</strong>
+          </span> @endif
+        </div>
+      </div>
+
+      <div class="form-group{{ $errors->has('slug') ? ' has-error' : '' }}">
+        <label for="slug" class="col-md-4 control-label">Slug</label>
+
+        <div class="col-md-6">
+          <input id="slug" type="text" class="form-control" name="slug" value="{{ $post->slug }}" placeholder="" required /> @if ($errors->has('slug'))
+          <span class="help-block">
+              <strong>{{ $errors->first('slug') }}</strong>
+          </span> @endif
+        </div>
+      </div>
+
+      <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
+        <label for="body" class="col-md-4 control-label">Text</label>
+
+        <div class="col-md-6">
+          <textarea name="body" id="body" class="form-control" placeholder="Make it Great" cols="30" rows="10">{{ $post->body }}</textarea> @if ($errors->has('body'))
+          <span class="help-block">
+              <strong>{{ $errors->first('body') }}</strong>
+          </span> @endif
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-alert">
+            cancel it
+            </button>
+          </div>
+          
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-primary btn-block">
+            or Share it with the worldwide !
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+@stop
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+ℙ𝕒𝕥𝕙 :
+file path
+    open new terminale
+          
+Sᴛᴇᴘ 34
+--------------------ℂ𝕠𝕕𝕖 -----------------
+    L34: php artisan make:controller BController
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+        
+ℙ𝕒𝕥𝕙 :
+app/Http/BController.php
+  class BController
+        
+Sᴛᴇᴘ 34.9
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+      /*
+        L34.9: USING THE CLASS Post IN The Providers/Post.php
+        */
+        use App\Post;
+      
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+ℙ𝕒𝕥𝕙 :
+app/Http/BController.php
+  class BController
+        
+Sᴛᴇᴘ 35
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+      /*
+        L35: SEND THE POST TO THE EDITING
+        */
+            public function slug($slug)
+        {
+            # code...
+            $post = Post::where('slug', '=', $slug)->first();
+            return view('b.s', compact('post'));
+        }
+      
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+
+ℙ𝕒𝕥𝕙 :
+file path
+    open new terminale
+          
+Sᴛᴇᴘ 36
+--------------------ℂ𝕠𝕕𝕖 -----------------
+    
+    L36: CREATING THE FILE FOR THE FRONT END FOR THE SLUG
+    
+    mkdir b
+    cd b
+    touch s.blade.php
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+ℙ𝕒𝕥𝕙 :
+resources/views/b/s.blade.php
+        
+Sᴛᴇᴘ 37
+--------------------ℂ𝕠𝕕𝕖 -----------------
+/*
+    *L37: CREATING THE ROOT FOR THE SLUG
+    */
+
+Route::get('b/{slug}', 'BController@slug')->name('slug');
+
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+  
+  
+ℙ𝕒𝕥𝕙 :
+resources/views/b/s.blade.php
+        
+Sᴛᴇᴘ 38
+--------------------ℂ𝕠𝕕𝕖 -----------------
+/*
+    *L38: CREATING THE ROOT FOR THE SLUG
+    */
+
+Route::get('b/{slug}', 'BController@slug')->name('slug');
+
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+ℙ𝕒𝕥𝕙 :
+resources/views/b/s.blade.php
+        
+Sᴛᴇᴘ 38
+--------------------ℂ𝕠𝕕𝕖 -----------------
+/*
+    *L38: CREATING THE ROOT FOR THE SLUG
+    */
+
+Route::get('b/{slug}', 'BController@slug')->name('slug');
+
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕
+
+ℙ𝕒𝕥𝕙 :
+resource/view/layouts/app.php
+  html
+    
+Sᴛᴇᴘ 39
+--------------------ℂ𝕠𝕕𝕖 -----------------
+{{-- L39:CHANGE THE LINK 
+<a href="{{route('posts', $post->slug)}}" class="btn btn-default pull-right lg">Viewing the complete post</a>
+TO THE SLUG--}}
+
+<a href="{{route('slug', $post->slug)}}" class="btn btn-default pull-right lg">Viewing the complete post</a>
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+ℙ𝕒𝕥𝕙 :
+file path
+  OPEN A NEW TERMINAL
+    
+Sᴛᴇᴘ 40
+--------------------ℂ𝕠𝕕𝕖 -----------------
+L40: php artisan make:model Tag -m -c -r
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+ℙ𝕒𝕥𝕙 :
+file path
+  OPEN A NEW TERMINAL
+    
+Sᴛᴇᴘ 41
+--------------------ℂ𝕠𝕕𝕖 -----------------
+L40: php artisan make:model Tag -m -c -r
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+
+ℙ𝕒𝕥𝕙 :
+file path
+routes/web.php
+    
+Sᴛᴇᴘ 42
+--------------------ℂ𝕠𝕕𝕖 -----------------
+/*
+L41: MAKING TE ROOT AND LINKING TAGS PAGE TO THE TAG CONTROLLER
+*/
+Route::resource('tags', 'TagController');
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+ℙ𝕒𝕥𝕙 :
+file path
+database/migrations/create....tags_table.php
+  public function up
+    
+Sᴛᴇᴘ 43
+--------------------ℂ𝕠𝕕𝕖 -----------------
+  
+/*
+*L42: ADDING A NEW ROW TO TAGS TABLE
+*/
+$table->string("name");
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+
+ℙ𝕒𝕥𝕙 :
+Http/Controllers/TagController.php
+    
+Sᴛᴇᴘ 44
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+
+/*
+* L43: USING THE CLASS APP
+*/
+use App\Tag;
+
+ℙ𝕒𝕥𝕙 :
+Http/Controllers/TagController.php
+    
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+ℙ𝕒𝕥𝕙 :
+Http/Controllers/TagController.php
+  public function index
+Sᴛᴇᴘ 45
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+  
+
+        /*
+        * L43:ORDERING THE RETURNED TAG WITH THE 
+        * URL
+        * /tags/
+        * AND THE VIEW PAGE IS resources/views/tags/inde.blade.php
+        */
+        $tags = Tag::orderBy('name')->paginate(5);
+        return view('tags.index', compact('tags'));
+        
+        
+
+
+ℙ𝕒𝕥𝕙 :
+resources/views/tags/index.blade.php
+Sᴛᴇᴘ 46
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+
+{{--L44: CREATE INDEX OF TAGS WITH A CREATE TAG FORM --}} 
+@extends('layouts.app') 
+@section('content')
+<div class="container">
+    <div class="row">
+        {{-- <div class="col-md-8">
+            <div class="header">Tags</div>
+            @foreach($tags as $tag)
+            <p>
+               <a href="{{ route('tags.show'), $tag->id }}" class="btn btn-default btn-lg">{{ $tag->name }}</a>
+               <span><small><b>{{ tag->posts()->count()}}</b></small></span>
+            </p>
+            <hr />
+            @endforeach
+            <div class="row">
+                <div class="col-md-8">
+                    {{ $tags->links() }}
+                </div>
+            </div>
+            
+        </div> --}}
+        
+        <div class="col-md-4">
+            <div class="well">
+                <h3>Create Tag</h3>
+                <hr />
+                   
+                <form method="post" role="form" class="form-horizontal" action="{{route('tags.store')}}">
+                    {{csrf_field()}}
+
+
+                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <label for="name" class="col-md-4 control-label">Name</label>
+
+                        <div class="col-md-6">
+                        <input id="name" type="text" class="form-control" name="name" value="{{old('name')}}" placeholder="Tag Name"  required autofocus /> @if ($errors->has('name'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span> @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-4">
+                        <button type="submit" class="btn btn-primary">
+                            Make a new tag
+                        </button>
+                        </div>
+                    </div>
+
+                 </form>
+            
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+@stop
+
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+
+ℙ𝕒𝕥𝕙 :
+resources/views/tags/show.blade.php
+Sᴛᴇᴘ 47
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+{{--L45: CREATING THE SHOW OF ONE TAG --}} 
+@extends('layouts.app') 
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Tag | <strong>{{$tag->name}}</strong></h1>
+            <span><a href="{{route('tags.edit', $tag->id )}}">Edit</a></span>
+            <span>
+                <form action="{{ route('tags.destroy', $tag->id )}}" method="post">
+                    {{ method_field('DELETE') }}{{csrf_field()}}
+                    <input type="submit" name="delete" value="Delete Tag" class="btn btn-danger"/>
+                </form>
+            </span>
+        </div>
+    </div>
+</div>
+@stop
+
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+
+ℙ𝕒𝕥𝕙 :
+Http/Controllers/TagController.php
+Sᴛᴇᴘ 48
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+/*
+*L46: USING THE Post namespace
+*/
+use App\Post;
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+
+
+
+ℙ𝕒𝕥𝕙 :
+Http/Controllers/TagController.php
+Sᴛᴇᴘ 49
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+public function store(Request $request)
+    {
+        //
+        /*
+        *L47: STORE THE TAG AT THE tags TABLE
+        */
+        $this->validate($request, array('name'=>'required|max:255'));
+        $tag = new Tag;
+        $tag->name = $request->name;
+        $tag->save();
+        return redirect()->route('tags.index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+        /*
+        *L48: SHOWING THE SPECIFIC TAG BY THE RECIVING ID
+              AND SHOWING THE VIEW tags/show.blade.php
+        */
+        
+        $tag = Tag::find($id);
+        return view('tags.show', compact('tag'));
+        
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+        /*
+        *L50: EDITING THE RECIEVING TAG
+        */
+        $tag = Tag::find($id);
+        return view('tags.edit', compact('tag'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+     
+     
+    public function update(Request $request, $id)
+    {
+        /*
+        *L51: MAKE THE EDIT FOR THE RECIEVING TAG
+        AND MAKING THE VALIDAT
+        */
+        $tag = Tag::find($id);
+        $this->validate($request, array('name'=>'required|max:255'));
+        $tag->name = $request->name;
+        $tag->save();
+        return redirect()->route('tags.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        /*
+        *L52: DESTROYING THE RECIEVING TAG
+        */
+        $tag = Tag::find($id);
+        $this->validate($request, array('name'=>'required|max:255'));
+        // DETACHING THE RECIEVING TAG FROM THE posts TABLE
+        $tag->posts()->detach();
+        // DESTROYIT
+        Tag::destroy($id);
+        // MAKE THE REDIRECTION TO tags.index in the url /tags
+        return redirect()->route('tags.index');
+    }
+    
+    
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖   
+
+ℙ𝕒𝕥𝕙 :
+app/Providers/Tag.php
+Sᴛᴇᴘ 50
+--------------------ℂ𝕠𝕕𝕖 -----------------    
+    /*
+    L53: DATABASE LINKING
+    */
+    public function posts(){
+        return $this->belongsToMany('App\Post');
+    }
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+
+ℙ𝕒𝕥𝕙 :
+app/Providers/Post.php
+Sᴛᴇᴘ 51
+--------------------ℂ𝕠𝕕𝕖 -----------------    
+    
+    /*
+    L54: DATABASE LINKING
+    */
+    public function tags(){
+        return $this->belongsToMany('App\Tag');
+    }
+
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+
+ℙ𝕒𝕥𝕙 :
+app/Http/PostControllers.php
+Sᴛᴇᴘ 52
+--------------------ℂ𝕠𝕕𝕖 ----------------- 
+
+    /*
+    L55: USING Tag NAME SPACE FOR LINKING WITH Posts DATABASE
+    */
+use App\Tag;
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+ 
+ℙ𝕒𝕥𝕙 :
+app/Http/PostControllers.php
+  public function create()
+Sᴛᴇᴘ 52
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+      /*
+      L56: CHANGING THE RETURN
+      
+      return view('posts.create', compact('tags'));
+      
+       AND SENDING AN VARIABLE THAT HAVE ALL TAGS
+      */
+      
+      $tags = Tag::all();
+      return view('posts.create', compact('tags'));
+      
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+      
+     
+ℙ𝕒𝕥𝕙 :
+app/Http/PostControllers.php
+  public function edit()
+Sᴛᴇᴘ 53
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+      /*
+      L57: CHANGING THE edit METHODE 
+      
+      $post = Post::find($id);
+      return view('posts.edit', compact('post'));
+      
+      AND ADDING ALL TAGS FOR SENDING ALL TAGS TO URL: /posts/edit
+
+      */
+      
+      $tags = Tag::all();
+        $post = Post::find($id);
+        return view('posts.edit', compact('post', 'tags'));
+      
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 
+
+
+ℙ𝕒𝕥𝕙 :
+app/Http/PostControllers.php
+  public function update()
+Sᴛᴇᴘ 54
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+/*
+      L58: if there is tags on this updating
+           sync the tags
+            */
+      if (isset($request->tags)) {
+        # code...
+          
+          $post->tags()->sync(
+            $request->tags
+          );
+      }else{
+          $post->tags()->sync(
+            array()
+          );
+      }
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 
+
+
+ℙ𝕒𝕥𝕙 :
+app/Http/PostControllers.php
+  public function destroy()
+Sᴛᴇᴘ 55
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+        /*
+        L59: DETACHING THE TAGS FROM THE POST 
+        BEFORE THE COMPLETE THESTROY
+        */
+        $post->tags()->detach();
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 
+
+OPEN A NEW TERMINAL
+
+Sᴛᴇᴘ 56
+--------------------ℂ𝕠𝕕𝕖 -----------------
+    L60: CREATING THE REFRENCING TABLE MANY TO MANY
+    php artisan make:migration create_post_tag_table --create=post_tag
+    
+    
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+ℙ𝕒𝕥𝕙 :
+database/migration/2017....create_post_tag_table.php
+    public function up
+Sᴛᴇᴘ 57
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+        /*
+         L61:   CREATE THE ROWS id, post_id, tags_id
+            AND REFERENCING post_id ON id ON posts TABLE
+            AND REFERENCING tag_id ON id ON tags TABLE
+            */
+            $table->increments('id');
+            $table->integer('post_id')->unsigned();
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->integer('tag_id')->unsigned();
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
+            
+        
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 
+
+ℙ𝕒𝕥𝕙 :
+database/migration/2017....create_post_tag_table.php
+    public function down
+Sᴛᴇᴘ 58
+--------------------ℂ𝕠𝕕𝕖 -----------------
+
+        /*
+        L62: DROPING THE CREATED TABLE
+         */
+            
+        Schema::dropIfEists('post_tag');  
+        
+
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+Sᴛᴇᴘ 59
+--------------------ℂ𝕠𝕕𝕖 -----------------
+    L61: APPLIYING THE MIGRATION
+    php artisan migrate
+  
+𝔼𝕟𝕕 𝕔𝕠𝕕𝕖 ---------------------- 𝔼𝕟𝕕 𝕔𝕠𝕕𝕖
+
+
+{{--L62: CREATE INDEX OF TAGS WITH A CREATE TAG FORM --}} 
+@extends('layouts.app') 
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="header">Tags</div>
+            @foreach($tags as $tag)
+            <p>
+               <a href="{{ route('tags.show', $tag->id) }}" class="btn btn-default btn-lg">Tag <span><small><b>{{ $tag->posts()->count()}}</b></small></span> : {{ $tag->name }}</a>
+               <br />
+               
+            </p>
+            <hr />
+            @endforeach
+            <div class="row">
+                <div class="col-md-8">
+                    {{ $tags->links() }}
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="col-md-4">
+            <div class="well">
+                <h3>Create Tag</h3>
+                <hr />
+                   
+                <form method="post" role="form" class="form-horizontal" action="{{route('tags.store')}}">
+                    {{csrf_field()}}
+
+
+                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <label for="name" class="col-md-4 control-label">Name</label>
+
+                        <div class="col-md-6">
+                        <input id="name" type="text" class="form-control" name="name" value="{{old('name')}}" placeholder="Add Tag"  required autofocus /> @if ($errors->has('name'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span> @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-4">
+                        <button type="submit" class="btn btn-primary">
+                            Update the tag
+                        </button>
+                        </div>
+                    </div>
+
+                 </form>
+            
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+@stop
+
+{{--L63: CREATE INDEX OF TAGS WITH A CREATE TAG FORM --}} 
+@extends('layouts.app') 
+@section('content')
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-4">
+            <div class="well">
+                <h3>Create Tag</h3>
+                <hr />
+                   
+                <form method="post" role="form" class="form-horizontal" action="{{route('tags.update', $tag->id)}}">
+                    {{method_field('PUT')}}{{csrf_field()}}
+
+
+                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <label for="name" class="col-md-4 control-label">Name</label>
+
+                        <div class="col-md-6">
+                        <input id="name" type="text" class="form-control" name="name" value="{{ $tag->name }}" placeholder="Tag Name"  required autofocus /> @if ($errors->has('name'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span> @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-4">
+                        <button type="submit" class="btn btn-primary">
+                            Update Tag
+                        </button>
+                        </div>
+                    </div>
+
+                 </form>
+            
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+@stop
+
+
+{{--L64: SHOW SPECIFIC TAG AND MAKE BUTTON TO MANAGIT --}} 
+@extends('layouts.app') 
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Tag | <strong>{{$tag->name}}</strong></h1>
+            <div class="col-md-6">
+                <span><a href="{{route('tags.edit', $tag->id )}}" class="btn btn-default">Edit</a></span>
+            </div>
+            <div class="col-md-6">
+                <span>
+                    <form action="{{ route('tags.destroy', $tag->id )}}" method="post">
+                        {{ method_field('DELETE') }}{{csrf_field()}}
+                        <input type="submit" name="delete" value="Delete Tag" class="btn btn-danger"/>
+                    </form>
+                </span>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+@stop
+
+
+create.blade.php
+
+
+      {{-- L65: ADDING A SELECT FORM FOR ADDING TAGS --}}
+      <div class="form-group{{ $errors->has('tags') ? ' has-error' : '' }}">
+        <label for="tags" class="col-md-4 control-label">Tags</label>
+
+        <div class="col-md-6">
+          <select name="tags[]" id="tags" class="form-control" multiple="multiple">
+            @foreach($tags as $tag)
+            <option value="{{$tag->id}}">{{ $tag->name }}</option>
+            @endforeach
+          </select>
+          
+          @if ($errors->has('tags'))
+          <span class="help-block">
+              <strong>{{ $errors->first('tags') }}</strong>
+          </span> 
+          @endif
+          
+        </div>
+      </div>
+
+edit
+
+      {{-- L66: ADDING A SELECT FORM FOR EDITING TAGS --}}
+      <div class="form-group{{ $errors->has('tags') ? ' has-error' : '' }}">
+        <label for="tags" class="col-md-4 control-label">Tags</label>
+
+        <div class="col-md-6">
+          <select name="tags[]" id="tags" class="form-control" multiple="multiple">
+            @foreach($tags as $tag)
+            <option value="{{$tag->id}}">{{ $tag->name }}</option>
+            @endforeach
+          </select>
+          
+          @if ($errors->has('tags'))
+          <span class="help-block">
+              <strong>{{ $errors->first('tags') }}</strong>
+          </span> 
+          @endif
+          
+        </div>
+      </div>
+      
+show.blade.php   
+      
+            {{-- L67: ADDING THE SHOW FOR TAGS --}}
+            <div class="well">
+                <dl class="dl-horizontal">
+                    <dt>Tags:</dt>
+                    <dd>
+                    <ul>
+                    @foreach($tags as $tag)
+                    
+                    <li>{{$tag->name}}</li>
+                    
+                    @endforeach
+                    </ul>
+                    </dd>
+                </dl>
+            </div>
+      
+PostController.php
+    index
+
+      
+      /*
+      L68: ADDING TAGS TO POST
+      */
+      
+      $post->tags()->sync(
+            $request->tags, false
+          );
+          
+app.blade.php   
+-------------       
+{{-- L69: ADDING THE JQuery 2.2.4 CDN FOR select2 --}}
+  <script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+
+{{-- L70: INCLUDE THE MAIN CODE OF select2 
+  AND INCLUDING A SCRIPT IF WE WANT 
+  TO INCLUDE SOMETHING THAT WORK WITH select2.js --}}
+  <script src="/js/select2/select2.min.js"></script>
+  @yield('scripts')
+
+head.blade.php
+{{--L71: ADDING THE MAIN CSS OF THE select2 --}}
+<link href="/css/select2/select2.min.css" rel="stylesheet">
+
+
+L72: MAKING ALL NECESSARY FILES TO MAKE CATEGORY
+php artisan make:model Category -c -m -r
+
+L73: ADDING category DIRECTORY AND ADDING IN IT index.blade.php and show.blade.php and edit.blade.php
+  
+
+web.php
+
+    /*
+    L74: MAKING TE ROOT AND LINKING CATEGORY PAGE TO THE TAG CONTROLLER
+    */
+    Route::resource('categories', 'CategoryController');
+    
+/*
+*L75: USING THE Post namespace
+*/
+use App\Post;
+
+
+/*
+*L76: MAKING THE HALL RESOURCES
+*/    
+    
+    public function index()
+    {
+        //
+
+        $categories = Category::orderBy('name')->paginate(5);
+        return view('categories.index', compact('categories'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+        
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+        //
+
+        $this->validate($request, array('name'=>'required|max:255'));
+        $category = new Category;
+        $category->name = $request->name;
+        $category->save();
+        return redirect()->route('categories.index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+
+        $category = Category::find($id);
+        return view('categories.show', compact('category'));
+        
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+
+        $category = Category::find($id);
+        return view('categories.edit', compact('category'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+
+        $category = Category::find($id);
+        $this->validate($request, array('name'=>'required|max:255'));
+        $category->name = $request->name;
+        $category->save();
+        return redirect()->route('categories.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+
+        $category = Category::find($id);
+        $this->validate($request, array('name'=>'required|max:255'));
+        // DETACHING THE RECIEVING TAG FROM THE posts TABLE
+        $category->postsCat()->detach();
+        // DESTROYIT
+        Category::destroy($id);
+        // MAKE THE REDIRECTION TO tags.index in the url /tags
+        return redirect()->route('categories.index');
+    }
+    
+    
+    ....create_categories_table
+    
+    
+/*
+            L77:ADDING A name ROW TO THE TABLE
+            */
+            $table->string('name');   
+    
+    L78: ACTIVATE THE MIGRATION
+    php artisan migrate
+
+{{--L79: CREATE INDEX OF CATEGORIES WITH A CREATE CATEGORY FORM --}} 
+@extends('layouts.app') 
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="header">Categories</div>
+            @foreach($categories as $category)
+            <p>
+               <a href="{{ route('categories.show', $category->id) }}" class="btn btn-default btn-lg">Category <span><small><b>{{ $category->postsCat()->count()}}</b></small></span> : {{ $category->name }}</a>
+               <br />
+               
+            </p>
+            <hr />
+            @endforeach
+            <div class="row">
+                <div class="col-md-8">
+                    {{ $categories->links() }}
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="col-md-4">
+            <div class="well">
+                <h3>Create Category</h3>
+                <hr />
+                   
+                <form method="post" role="form" class="form-horizontal" action="{{route('categories.store')}}">
+                    {{csrf_field()}}
+
+
+                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <label for="name" class="col-md-4 control-label">Name</label>
+
+                        <div class="col-md-6">
+                        <input id="name" type="text" class="form-control" name="name" value="{{old('name')}}" placeholder="Add Category"  required autofocus /> @if ($errors->has('name'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span> @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-4">
+                        <button type="submit" class="btn btn-primary">
+                            Create the Category
+                        </button>
+                        </div>
+                    </div>
+
+                 </form>
+            
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+@stop
+
+
+{{--L80: CREATE PAGE FOR EDITING A CATEGORY --}} 
+@extends('layouts.app') 
+@section('content')
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-4">
+            <div class="well">
+                <h3>Edite Category</h3>
+                <hr />
+                   
+                <form method="post" role="form" class="form-horizontal" action="{{route('categories.update', $category->id)}}">
+                    {{method_field('PUT')}}{{csrf_field()}}
+
+
+                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <label for="name" class="col-md-4 control-label">Name</label>
+
+                        <div class="col-md-6">
+                        <input id="name" type="text" class="form-control" name="name" value="{{ $category->name }}" placeholder="Category Name"  required autofocus /> 
+                        @if ($errors->has('name'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span> 
+                        @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-4">
+                        <button type="submit" class="btn btn-primary">
+                            Update Category
+                        </button>
+                        </div>
+                    </div>
+
+                 </form>
+            
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+@stop
+
+
+{{--L81: SHOW SPECIFIC CATEGORY AND MAKE BUTTON TO MANAGIT --}} 
+@extends('layouts.app') 
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Category | <strong>{{$category->name}}</strong></h1>
+            <div class="col-md-6">
+                <span><a href="{{route('categories.edit', $category->id )}}" class="btn btn-default">Edit</a></span>
+            </div>
+            <div class="col-md-6">
+                <span>
+                    <form action="{{ route('categories.destroy', $category->id )}}" method="post">
+                        {{ method_field('DELETE') }}{{csrf_field()}}
+                        <input type="submit" name="delete" value="Delete Category" class="btn btn-danger"/>
+                    </form>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+@stop
+
+    
+    
+    
+    
+    
+    
+/*    L82:*/
+    
+    
+
+use App\Category;
+
+
+
+PostController.php
+    create()
+
+      /*
+      L83: 
+      */
+      $categories = Category::all();
+      /*
+      L84: CHANGING AND ADDING THE SENDING categories
+      return view('posts.create', compact('tags'));
+      
+      */
+      
+      return view('posts.create', compact('tags', 'categories'));    
+    
+PostController.php
+    store()
+    
+      /*
+      L85: ADDING CATEGORIES TO POST
+      */
+      
+      $post->categories()->sync(
+            $request->categories, false
+          );
+posts/edit.blade.php
+
+{{-- 
+L85.9:
+ADDING THE select2 for concerned Categories 
+and fetching the categories concerned in the SELECT POST
+ --}}
+$('.multiSelectCat').select2();
+
+
+
+$('.multiSelectCat').select2()
+      .val({!!json_encode( $post->categories()->getRelatedIds() )!!})
+      .trigger('change'); 
+      
+      
+      
+      {{-- L86: ADDING A SELECT FORM FOR EDITING CATEGORIES --}}
+      <div class="form-group{{ $errors->has('categories') ? ' has-error' : '' }}">
+        <label for="categories" class="col-md-4 control-label">Categories</label>
+
+        <div class="col-md-6">
+          <select name="categories[]" id="categories" class="form-control multiSelectCat" multiple="multiple">
+            @foreach($categories as $category)
+            <option value="{{$category->id}}">{{ $category->name }}</option>
+            @endforeach
+          </select>
+          
+          @if ($errors->has('categories'))
+          <span class="help-block">
+              <strong>{{ $errors->first('categories') }}</strong>
+          </span> 
+          @endif
+          
+        </div>
+      </div>
+      
+      
+create.blade.php
+   
+      {{-- L87: ADDING A SELECT FORM FOR ADDING CATEGORIES FOR A POST --}}
+      <div class="form-group{{ $errors->has('categories') ? ' has-error' : '' }}">
+        <label for="categories" class="col-md-4 control-label">Categories</label>
+
+        <div class="col-md-6">
+          <select name="categories[]" id="categories" class="form-control multiSelectCat" multiple="multiple">
+            @foreach($categories as $category)
+            <option value="{{$category->id}}">{{ $category->name }}</option>
+            @endforeach
+          </select>
+          
+          @if ($errors->has('categories'))
+          <span class="help-block">
+              <strong>{{ $errors->first('categories') }}</strong>
+          </span> 
+          @endif
+          
+        </div>
+      </div>      
+      
+
+{{-- L87.1:  --}}
+$('.multiSelectCat').select2();
+
+{{-- L87.9: ADDING THE SHOW FOR TAGS --}}
+            <div class="well">
+                <dl class="dl-horizontal">
+                    <dt>Categories:</dt>
+                    <dd>
+                    <ul>
+                    @foreach($post->categories as $category)
+                    
+                        <li class="label label-default"><a href="{{ route('categories.show', $category->id) }}" class="">{{ $category->name }}</a></li>
+                    
+                    @endforeach
+                    </ul>
+                    </dd>
+                </dl>
+            </div>
+L88      
+php artisan make:migration create_category_post_table
+
+
+L89: MAKE THE MIGRATION
+databases/migrations/...create..category_post...php
+    public function up()
+    {
+        //
+        Schema::create('category_post', function (Blueprint $table) {
+            //
+            $table->increments('id');
+            $table->integer('category_id')->nullable();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            
+            $table->integer('post_id')->unsigned();
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            
+            
+        });
+    }
+   
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        //
+        Schema::dropIfEists('category_post');
+    }
+
+L89:ACTIVATE THE MIGRATION
+php artisan migrate
+
+
+CategoryController
+
+/*
+*L90: USING THE Post namespace
+*/
+use App\Category;
+
+open new terminale
+
+ 
+categories/show.blade.php
+
+{{-- 
+    L91: CATEGORIE SHOW
+ --}}
+<div class="col-md-4">
+            <h1>Informations about</h1>
+            <h3>{{$category->name}} is in <strong>{{$category->postsCat()->count() }}</strong> posts</h3>
+            
+            <table>
+                
+                <thead>
+                    <tr>
+                        <th>
+                            Post Name
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach( $category->postsCat as $post )
+                    <tr>
+                        <td>
+                            <a href="{{ route('slug', $post->slug) }}">{{ $post->title }}</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            
+            </table>
+            
+        </div>
+        
+tags/show.blade.php
+
+{{-- 
+    L92: 
+ --}} 
+        <div class="col-md-4">
+            <h1>Informations about</h1>
+            <h3>{{$tag->name}} is in <strong>{{$tag->posts()->count() }}</strong> tags</h3>
+            
+            <table>
+                
+                <thead>
+                    <tr>
+                        <th>
+                            Tag Name
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach( $tag->posts as $post )
+                    <tr>
+                        <td>
+                            <a href="{{ route('slug', $post->slug) }}">{{ $post->title }}</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            
+            </table>
+            
+        </div>
+
+
+footer.blade.php
+
+{{-- 
+    L93: FOOTER 
+ --}}
+<div class="col-md-8 col-md-offset-4">
+    <h4>
+        The not best blog - All right reserverved
+    </h4>
+    <div class="col-md-12">
+        <hr />
+    </div>
+</div>
+
+
+{{-- 
+    L92: ADDING AN ADMIN TO USERS TABLE
+ --}}
+
+    public function up()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            //
+            $table->boolean('admin')->default(0);
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            //
+            $table->dropColumn('admin');
+        });
+    }
+    
+
+L92: ADMIN MIDDLEWARE
+php artisan make:middleware Admin
+
+/*
+            L93: ACTIVING THE MIDDLE WARE IN THE APP
+        */
+        'admin' => \App\Http\Middleware\Admin::class,
+
+
+
+
+User.php
+
+/*
+            L94: This looks for admin column in the users table
+        */
+    public function isAdmin()
+    {
+        
+        return $this->admin;
+    }
+
+
+
+
+/*
+            L95: This looks for admin column in the users table
+        */
+    public function user()
+    {
+
+        return $this;
+    }
+
+
+
+LoginController.php
+/*
+    L96: CHANGE WHEN LOGING FROM /home to /
+    protected $redirectTo = '/home';*/
+    
+    protected $redirectTo = '/';
+
+
+{{-- 
+          L97: IF ADMIN PASS TO THE NEXT REQUEST
+            AND IF ITS AN ADMIN SHOW THE BUTTON CREATE THE POST BUTTON
+         --}}
+        @if (Auth::user())
+          @if (Auth::user() || Auth::user()->isAdmin())
+            <li><a href="{{ route('posts.create') }}">Create Post</a></li>
+          @endif
+        @endif
+        
+        
+        
+{{-- L98: ADDING THE SEARCH FORM --}}
+        <li>
+            <form methode="get" action="">
+                {{csrf_field()}}
+                <div class="form-group">
+                    <input type="search" name="q" class="form-controll" placeholder="Search" id="q" />
+                </div>
+            </form>
+        </li>
+
+    /*
+        L99: ADDING THE FUNCTION OF MEAN
+            RETURNING TITLE LIKE WATH TYPE IN IT
+    */
+    public function scopeSearch($query, $search){
+        return $query->where('title', 'LIKE', "%$search%");
+    }
+    
+BController
+
+    /*
+        L100
+        CHANGE 
+            public function slug(Request $request, $slug)
+        TO
+    */
+    public function slug(Request $request, $slug)
+    {
+        
+        $query = $request->get('q');
+
+        if( $query ){
+            
+            $posts = $query ? Post::search( $query )->orderBy( 'id', 'desc' )->paginate('7') : Post::all();
+
+            return view('home', compact('posts') );
+            
+        }else{
+            
+            $post = Post::where('slug', '=', $slug)->first();
+            return view('b.s', compact('post'));
+            
+        }
+        
+    }
+    
+    
+    
+    
+        
+PostController
+    index.php
+/*
+     change public function index() TO
+        L101: IF THERE IS A QUERY FETCH IN HOME IF NOT PLAY NORMAL
+      */
+    public function index(Request $request)
+    {
+      
+      $query = $request->get('q');
+        
+        if( $query ){
+            
+            $posts = $query ? Post::search( $query )->orderBy( 'id', 'desc' )->paginate('7') : Post::all();
+            return view('home', compact('posts') );
+            
+        }else {
+          # code...
+          
+            /*
+            L9: RETURNING THE home.blade.php VIEW
+            */
+            /*
+            L25: LIMITING POSTS AND RETERNIT TO THE home.blade.php
+            */
+            $posts = Post::orderBy('id', 'desc')->paginate(5);
+            return view('home', compact('posts'));
+        }
+        
+        
+      
+    }
+
+
+
+CategoryController
+  
+     /*
+     change public function index() TO
+        L102: IF THERE IS A QUERY FETCH IN HOME IF NOT PLAY NORMAL
+      */
+    public function index(Request $request)
+    {
+     
+      $query = $request->get('q');
+        
+        if( $query ){
+            
+            $posts = $query ? Post::search( $query )->orderBy( 'id', 'desc' )->paginate('7') : Post::all();
+            return view('home', compact('posts') );
+            
+        }else {
+
+            $categories = Category::orderBy('name')->paginate(5);
+            return view('categories.index', compact('categories'));
+        }
+    } 
+        
+
+TagController
+/*
+     change public function index() TO
+        L103: IF THERE IS A QUERY FETCH IN HOME IF NOT PLAY NORMAL
+      */
+    public function index(Request $request)
+    {
+     
+      $query = $request->get('q');
+        
+        if( $query ){
+            
+            $posts = $query ? Post::search( $query )->orderBy( 'id', 'desc' )->paginate('7') : Post::all();
+            return view('home', compact('posts') );
+            
+        }else {
+        /*
+        *L43:ORDERING THE RETURNED TAG WITH THE 
+        URL
+        /tags/
+        AND THE VIEW PAGE IS resources/views/tags/inde.blade.php
+        */
+            $tags = Tag::orderBy('name')->paginate(5);
+            return view('tags.index', compact('tags'));
+            
+        }
+    }      
+  
+  
+  
+  
+composer require intervention/image
+
+
+config/app.php
+    $providers
+/*
+        
+        L104
+        
+        INTERGRATE INTERVENTION IMAGES
+        
+        */
+        Intervention\Image\ImageServiceProvider::class,
+        
+        
+                    *****
+        
+    $aliases       
+/*
+            105: INTEGRATE INTERVATE LARAVEL IMAGE
+        */
+        
+        'Image' => Intervention\Image\Facades\Image::class
+
+          
+          
+       L106  
+       php artisan make:migration add_image_to_posts_table
+
+L107
+
+public function up()
+    {
+        /*
+            L107:ADDING a column image to the posts table
+        */
+        Schema::table('posts', function(Blueprint$table){
+
+            $table->string("image")->nullable;
+            
+        });
+    }
+
+    
+public function down()
+    {
+        /*
+        L108: DROPING COLUMN
+        */
+        Schema::table('posts', function(Blueprint$table){
+
+            $table->dropColumn("image");
+            
+        });
+    }
+    
+PostController
+    store
+    /*
+          L109: ADDING AN IMAGE VALIDATION
+        */
+        'img' =>  'image'
+    update
+    /*
+          L110: ADDING AN IMAGE VALIDATION
+        */
+        'img' =>  'image'
+        
+/*
+  L111: USING STORAGE TO STORAGE AND IMAGE TO MAKING IMAGES
+*/
+use Image;
+use Storage;
+
+
+
+    store
+        /*
+        L112: SAVING THE IMAGE
+      */
+      
+      if( $request->hasFile('img') ){
+        
+        $image = $request->file('img');
+        $imageName = time().'.'.$image->getClientOriginalExtension();
+        $location = 'photos/'.$imageName;
+        Image::make($image)->save($location);
+        $post->image = $imageName;
+        
+      }
+    
+    update
+    
+    
+        /*
+        L113: SAVING THE IMAGE
+      */
+      
+      if( $request->hasFile('img') ){
+        
+        $image = $request->file('img');
+        $imageName = time().'.'.$image->getClientOriginalExtension();
+        $location = 'photos/'.$imageName;
+        
+        
+        $oldPhoto = $post->image;
+        
+        $post->image = $imageName;
+        
+        Storage::delete($oldPhoto);
+        
+      }
+      
+post.blade.php
+
+{{-- 
+      L114: SHOWING IMG
+   --}}
+  <span><img src="{{ asset( 'photos/'.$post->image ) }}" alt=""></span>
+  
+  
+{{-- 
+          L115: INPUT TO ADDING AN IMG
+       --}}
+      <div class="form-group{{ $errors->has('img') ? ' has-error' : '' }}">
+        <label for="img" class="col-md-4 control-label">Upload an image</label>
+
+        <div class="col-md-6">
+          <input type="file" name="img" id="img" class="form-control" multiple="multiple">
+          {{-- 
+          @if ($errors->has('file'))
+          <span class="help-block">
+              <strong>{{ $errors->first('body') }}</strong>
+          </span> 
+          @endif 
+          --}}
+        </div>
+      </div>
+      
+{{-- 
+      L116: 
+    <form method="post" role="form" class="form-horizontal" action="{{route('posts.store')}}" enctype="multipart/form-data"> 
+    --}}
+    <form method="post" role="form" class="form-horizontal" action="{{route('posts.store')}}" enctype="multipart/form-data">
+
+edit.blade.php
+
+    {{-- 
+          L116: INPUT TO ADDING AN IMG
+       --}}
+      <div class="form-group{{ $errors->has('img') ? ' has-error' : '' }}">
+        <label for="img" class="col-md-4 control-label">Upload an image</label>
+
+        <div class="col-md-6">
+          <input type="file" name="img" id="img" class="form-control" multiple="multiple">
+          {{-- 
+          @if ($errors->has('file'))
+          <span class="help-block">
+              <strong>{{ $errors->first('body') }}</strong>
+          </span> 
+          @endif 
+          --}}
+        </div>
+      </div>
+      
+        {{-- 
+            L117: 
+            <form method="post" role="form" class="form-horizontal" action="{{route('posts.store')}}" enctype="multipart/form-data"> 
+            --}}
+            <form method="post" role="form" class="form-horizontal" action="{{route('posts.store')}}" enctype="multipart/form-data">
+
+L118
+CREATE A photos DIRECTORY TO THE public DIRECTORY
+
+L119
+php artisan migrate
+
+post/show.blade.php
+            {{-- 
+                L120: SHOWING IMG
+            --}}
+            <span><img src="{{ asset( 'photos/'.$post->image ) }}" alt=""></span>
+            <div class="col-md-12">
+
+b/s.blade.php
+{{-- 
+                L121: SHOWING IMG
+            --}}
+            <span><img src="{{ asset( 'photos/'.$post->image ) }}" alt=""></span>
+ 
+app/Post.php
+
+    /*
+    L121.1: DATABAS LINKING WITH USER
+    */
+    public function users(){
+        return $this->belongsToMany('App\User');
+    }
+    
+    
+app/User.php    
+    
+    /*
+    L121.2: DATABAS LINKING WITH POST
+    */
+    public function UserPost(){
+        return $this->belongsToMany('App\Post');
+    }
+
+.....create_post_user_table.php
+    up
+    
+    
+    /*
+            L122: CLOUMN
+        */
+        Schema::create('post_user', function (Blueprint $table) {
+            $table->increments('id');
+            
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            
+            $table->integer('post_id')->unsigned()->nullable();
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            
+            
+        });
+            
+/*
+L123: MAKING TE ROOT AND LINKING CATEGORY PAGE TO THE TAG CONTROLLER
+*/
+Route::get('profile/{id}', 'ProfileController@profile')->name('profile')->middleware('auth');
+            
+
+
+L124: php artisan make:controller ProfileController
+
+ProfileController
+/*
+L124.9: USE DB 
+*/
+use Illuminate\Support\Facades\DB;
+/*
+    L125: INITIALIZE THE ProfileController WITH THE MODELS
+
+*/
+use App\User;
+
+use App\Post;
+
+use Auth;
+
+
+
+/*
+        L126: EMPECHING PEOPLE TO SEE PROFILE TO OTHER PEOPLES
+    */
+    public function profile($id)
+    {
+        # code...
+        $fav = DB::table('post_user')->whereUserId(Auth::user()->id)->pluck('post_id')->all();
+        $user = User::find( $id );
+        if( $user->id != Auth::user()->id ) {
+            # code...
+            return redirect('/');
+        }else{
+            return view('profile', compact('user', 'fav') );
+        }
+    }
+PostController
+/*
+  
+  L126.04 : INITIALIZE DB
+*/   
+use Illuminate\Support\Facades\DB; 
+/*
+  
+  L126.05 : INITIALIZE AUTH 
+*/   
+use Auth; 
+
+
+
+PostController
+    index
+  
+
+
+
+/*
+        L126.1
+      */
+      if( Auth::check() ){
+        $fav = DB::table('post_user')->whereUserId(Auth::user()->id)->pluck('post_id')->all(); 
+      }
+
+    
+profile.blade.php
+    
+{{-- L127: MAKING THE PROFILE DESIGN --}}
+@extends('layouts.app')
+
+@section('content')
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{ $user->name }}</h1>
+            <h3>{{ $user->email }}</h3>
+        </div>
+    </div>
+
+
+@stop
+
+
+ProfileController
+/*
+        L128: MAKING THE FAVORITE AND THE STORE CONTROLLER
+    */
+    public function favorite($id)
+    {
+        # code...
+        $fav = DB::table('post_user')->whereUserId(Auth::user()->id)->pluck('post_id')->all();
+        $id = Auth::user()->id;
+        $user = User::find( $id );
+        if( $user->id != Auth::user()->id ) {
+            # code...
+            return redirect('/');
+        }else{
+            return view('favorites', compact('user', 'fav') );
+        }
+    }
+    
+    
+    public function store($id)
+    {
+        # code...
+        $post = Post::find($id);
+        $post->users()->sync( [ Auth::user()->id ], false );
+        return redirect('/');
+        
+    }
+    
+
+web.php
+/*
+L129: MAKING ROOT OF FAVORITES
+*/
+Route::get('profile/{id}/favorites', 'ProfileController@favorite')->name('favorites')->middleware('auth');
+
+Route::post('profile/{id}/favorites', 'ProfileController@store')->name('favorites.store');
+
+post.blade.php
+
+  {{-- 
+      L130: IF TIS FAVORITES THAT GOOD 
+      IF NOT ADD THE BUTTON TO ADD
+   --}}
+  @if(Auth::check())
+  
+    @if( $fave =  in_array( $post->id , $fav )
+      <form action="{{ route('removeFavorites', [Auth::user()->id, $post->id]) }}" method="POST">
+        {{ method_field('DELETE') }}{{ csrf_field() }}
+    @else
+      <form action="{{ route('favorites.store', $post->id) }}" method="POST">
+        {{ csrf_field() }}
+    @endif
+        <button type="submit" class="btn-fav">
+          <i class="glyphicon glyphicon-heart {{ $fave ? 'fav' : 'not-fav' }}"></i>
+        </button>
+      </form>
+  @endif
+    
+    
+web.php
+
+/*
+L131: MAKING THE DELETE ROUTE
+*/
+Route::delete('profile/{uid}/favorites/{pid}', 'ProfileController@destroy')->name('removeFavorites');
+    
+/*
+    L132: MAKING THE DELETE CONTROLLER
+    */
+    
+    public function destroy( $uid, $pid)
+    {
+        # code...
+        $post = Post::find($pid);
+        $post->users()->detach();
+        $post->save();
+        return back();
+        
+    }
+
+
+L133: php artisan migrate 
+
+
+
+{{-- L134: creating new page favorites.blade.php  --}}   
+
+@extends('layouts.app') 
+  @section('content')
+
+    <div class="row">
+        <div class="col-md-8">
+            @if($user->UserPost()->count())
+                @foreach($user->UserPost as $post)
+                
+                    @include('partials.post')
+                
+                @endforeach
+            @else
+            
+                <div class="jumbotron">
+                    <p>Nothing</p>
+                    <hr>
+                    <h3><a href="">Save</a></h3>
+                </div>
+            
+            @endif
+            
+        </div>
+    </div>
+
+  @stop
+@endsection
+
+
+{{--L135: INCLUDE font awsome --}}
+<link href="/css/fontAwsome/font-awesome.min.css" rel="stylesheet">
+
+
+L136:create partial/messages.blade.php
+
+{{-- 
+L136: MESSAGES
+ --}}
+@if( Session::has('success'))
+
+    <div class="alert alert-success" role="success">
+        
+            
+        <strong>Great ! </strong>{{ Session::get('success') }}
+        
+    </div>
+
+@endif
+
+@if(count( $errors ) > 0 )
+
+    <div class="alert alert-success" role="success">
+        <strong>
+            Something went wrong
+        </strong>
+        <ul>
+            @foreach( $errors as $error )
+            
+                <li>
+                    {{ $error }}
+                </li>
+            
+            @endforeach
+        </ul>
+    </div>
+
+@endif
+
+{{-- 
+    L136: INCLUDING THE MESSAGES ABOVE THE CONETENT
+   --}}
+  @include('partials/messages')
+   
+   
+PostController
+    /*
+        L137: use The Session
+    */
+    use Session;   
+   
+PostController
+    store
+   
+      /*
+        138: ADDING THE SUCCESS OR NON SUCCESS MESSAGES
+      */
+      Session::flash('success', 'The post has been published with success');
+  
+  
+L139:
+php artisan make:model Comment -m -c -r
+
+Comment.php
+    /*
+        L140: REFERENCE POST WITH COMMENT
+    */
+    public function post()
+    {
+        # code...
+        
+        return $this->belongsTo('App\Post');
+    }
+    
+Post.php    
+    /*
+        L141: REFERENCE COMMENTS
+    */
+    
+    public function comment()
+    {
+        # code...
+        return $this->hasMany('App\Comment');
+    }
+
+    
+.....create_comments_table.....php
+up
+            /*
+                L142: ADDING A ROWS TO THE COMMMENTS TABLE
+            */
+            $table->string('name');
+            $table->string('email');
+            $table->text('comment');
+            $table->integer('post_id')->unsigned();
+            
+        /*
+            L143: ADDING A Foreing key TO THE COMMMENTS TABLE RELATED TO PST TABLE
+        */
+        Schema::table('comments', function ($table) {
+
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+
+        });
+
+.....create_comments_table.....php
+down
+
+/*
+            DROPING THE FOREING KEY WITH ROLLBACK
+        */
+        Schema::dropForeign('post_id');
+
+L145: php artisan migrate
+
+
+
+ADDING IDENTICON
+L146: composer require irazasyed/laravel-identicon:~1.1
+
+
+
+/*
+       
+       L147: ADDING SERVICEPROVIDER FOR IDENTICON
+       
+       */ 
+       
+       'Irazasyed\LaravelIdenticon\ServiceProvider',
+
+
+/*
+       
+        L148: ADDING ALIASES FOR IDENTICON
+       
+        */ 
+       
+       'Identicon'  => 'Irazasyed\LaravelIdenticon\Facade',
+
+{{-- 
+        L150: UI COMMENTS
+         --}}
+
+<div class="col-md-8" id="commentsForm">
+            <h1>Tell us what you think</h1>
+            <form action="{{ route('comments.store, $post->id') }}" methode="post">
+                {{ csrf_field() }}
+                <div class="row">
+                    <div class="form-group">
+                        <label for="name" class="col-md-4 control-label">Name :</label>
+                        <input type="text" name="name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-md-4 control-label">E-mail: </label>
+                        <input type="text" name="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment" class="col-md-4 control-label">Comment here: </label>
+                        <texterea name="comment" placeholder="Have your say" class="form-control"></texterea>
+                        
+                    </div>
+                    <button type="Submit" name="submitComment" class="btn btn-default btn-block">Add comment</button>
+                </div>
+                
+            </form>
+        </div>
+        
+        <div class="col-md-8">
+            <h2>Number of comments<span><small>{{ $post->comments->count() }}</small></span></h2>
+            @foreach($post->comments as $comment)
+            
+                <div class="comment">
+                    <div class="author">
+                        <img src="{{ Identicon::getImageDataUri( { $comment->email } ) }}" alt="bar Identicon" class="authorImg" />
+                        <div class="authorName">
+                            <h3>{{ $comment->name }}</h3>
+                            <small>{{ $comment->created_at }}</small>
+                        </div>
+                    </div>
+                    <div class="commentBody">
+                        {{ strip_tags( $comment->comment ) }}
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+
+
+CommentController.php
+
+/*
+L151: Initializing models in controller
+
+*/
+
+use App\Comment;
+
+use App\Post;
+
+use Session;
+
+
+CommentController.php
+    store
+    
+    /*
+        L152: VALIDATE CONTROLLER TO STORE COMMENT
+        */
+        $this->validate($request, array(
+            'name' => 'required|red|max:255',
+            'email' => 'required|email|max:255',
+            'comment' => 'required|min:5|max:1500'
+            
+        ));
+        $commment = new Comment;
+        $post = Post::find( $pid );
+        $commment->name = $request->name;
+        $commment->email = $request->email;
+        $commment->comment = $request->comment;
+        $comment->post()->associate( $post );
+        $comment->save();
+        Session::flash('success', 'Comment added successfuly');
+        return back();
+        
+        
+/*
+    L153: ROOT TO STORE COMMENT
+*/
+
+Route::post('commets/{pid}/', 'CommentController@store')->name('comments.store');
+        
+        
+        
+        
+        
+        
+        
+                        ╭┳┳━╮╱╭━╮╱╱╱╱╱╱╭━━┳╮╭╮╱╱╱╱╭━╮
+                        ┃┃┃━╋━┫━╋┳┳╮╭╮╱╰╮╭┫╰╋╋━┳┳━┫━┫
+                        ┃┃┣━┃┻┫╭┫┃┃╰┫╰╮╱┃┃┃┃┃┃┃┃┃╋┣━┃
+                        ╰━┻━┻━┻╯╰━┻━┻━╯╱╰╯╰┻┻┻┻━╋╮┣━╯
+                        ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━╯
+
+How To Build A Blog With Laravel 5.3
+https://www.youtube.com/watch?v=lmfUmn0A5rg&index=1&list=PLBAjDAS49NhBLo86emPLBI2jDLcEahTBQ
+DONT FORGATE THE COMMANDS OF MAKING THe PROFIE BLADE PAGE
+
+                    ╭━╮╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭╮╱╱╭╮╭╮
+                    ┃╭╋━┳━━┳━━┳━╮╭━┳┳╯┣━╮┃┃┣╋━┳┳━╮
+                    ┃╰┫╋┃┃┃┃┃┃┃╋╰┫┃┃┃╋┃┻┫┃╰┫┃┃┃┃┻┫
+                    ╰━┻━┻┻┻┻┻┻┻━━┻┻━┻━┻━╯╰━┻┻┻━┻━╯
+                    
+                    
+                    
+                    
+                    IN UPDATE MAKE SHOURE THAT IF UPDATED THEN UPDATE IF NOT NOT UPDATE THAT MAKE SOMME ERRORS
+                    
+                    THE PROBLEMME IN MIGRATINONONONOON
+
+          
